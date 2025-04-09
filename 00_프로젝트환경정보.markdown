@@ -1,0 +1,80 @@
+# 📁 00_프로젝트정보.markdown
+
+EduTrack 프로젝트 개발 및 실행 환경 정보를 정리합니다.
+
+---
+
+## ✅ 프로젝트 세팅 순서
+
+1. Oracle 21c XE 설치 및 설정
+2. PDB 접속 전환 (`ALTER SESSION SET CONTAINER = XEPDB1`)
+3. EDU_TRACK 사용자 생성 및 권한 부여
+4. VSCode + 확장팩 설치 (Java, Spring Boot)
+5. JDK 17 설치 및 환경 변수 설정
+6. Spring Boot 프로젝트 생성 (start.spring.io)
+7. `application.yml` 작성 및 Oracle DB 연결
+8. 테이블 생성 SQL 실행 (`edu_track_create_tables.sql`)
+9. 더미 데이터 입력 (`edu_track_dummy_data.sql`)
+10. VSCode에서 `mvnw spring-boot:run` 실행 → 정상 실행 확인
+
+---
+
+## ✅ Oracle DB 정보
+
+| 항목       | 내용                      |
+|------------|---------------------------|
+| DB 버전    | Oracle 21c XE             |
+| 사용자     | EDU_TRACK                 |
+| 비밀번호   | edu1234                   |
+| 포트       | 1521                      |
+| PDB 이름   | XEPDB1                    |
+| 접속 URL   | `jdbc:oracle:thin:@localhost:1521/XEPDB1` |
+
+---
+
+## ✅ 주요 테이블 요약
+
+| 테이블명               | 설명             |
+|------------------------|------------------|
+| USR_USERS              | 사용자 정보       |
+| EDU_COURSES            | 교육과정 정보     |
+| APLY_COURSE_APPLYS     | 교육신청 내역     |
+| PRGS_COURSE_PROGRESS   | 교육이수 정보     |
+| EXAM_EXAMS             | 시험 정보         |
+| NTCE_NOTICES           | 공지사항          |
+
+※ 공통 컬럼: `REG_DT`, `MOD_DT`, `DEL_YN`, `DEL_RSN` 등 포함
+
+---
+
+## ✅ 개발 환경 정보
+
+| 항목         | 내용             |
+|--------------|------------------|
+| OS           | Windows 11       |
+| IDE          | VSCode           |
+| JDK 버전     | JDK 17           |
+| Spring Boot  | 3.x (최신)       |
+| DB 연동      | MyBatis          |
+| View         | Thymeleaf or JSP |
+| 빌드도구     | Maven             |
+
+---
+
+## ✅ 프로젝트 파일 구조 예시
+
+```
+src/
+  └─ main/
+     ├─ java/com/edutrack/edutrack/EdutrackApplication.java
+     ├─ resources/
+        ├─ application.yml
+        ├─ templates/
+        └─ static/
+project root/
+  ├─ 00_프로젝트정보.markdown
+  ├─ 01_프로젝트_설계_및_정리.markdown
+  ├─ 02_화면정의서.markdown
+  ├─ 03_ERD설계.markdown
+  ├─ pom.xml
+```
