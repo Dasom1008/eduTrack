@@ -1,0 +1,140 @@
+/* tR001_List.css */
+
+/* 전체 컨테이너 */
+.course-container {
+  width: 80%;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 타이틀 중앙 정렬 */
+.course-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-group select,
+.form-group input[type="text"] {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #333;
+  transition: border 0.4s ease-in-out;
+}
+
+.form-group select:focus,
+.form-group input[type="text"]:focus {
+  border-color: #005bac;
+  outline: none;
+}
+
+
+/* 검색 조건 박스 */
+.search-box {
+  background-color: #f9fbfd;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+.search-box .form-group {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.search-box label {
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.search-box .year-select {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+}
+.search-box .type-select {
+  grid-column: span 3;
+}
+.search-box .name-input {
+  grid-column: span 6;
+}
+
+/* 검색 버튼 영역 */
+.search-actions {
+  grid-column: span 12;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.search-actions button {
+  padding: 8px 20px;
+  
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 100px;
+  font-size: 14px;
+}
+
+#btn-search {
+  background-color: #1D56BC;
+  border: 1px solid #1D56BC;
+  color: #f1f4f7;
+}
+
+#btn-reset{
+  background-color: #d8d8d8;
+  border: 1px solid #d8d8d8;
+}
+
+/* 목록 테이블 스타일 */
+.course-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.course-table thead {
+  background-color: #f1f4f7;
+  border-top: 2px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.course-table th,
+.course-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.course-table tbody tr:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}

@@ -1,0 +1,81 @@
+
+<!-- tR001_List.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>교육과정 조회</title>
+  <link rel="stylesheet" href="/css/common.css" />
+  <link rel="stylesheet" href="/css/tR001_List.css" />
+</head>
+<body>
+
+  <div th:replace="fragments/header :: header"></div>
+
+<!-- tR001_List.html -->
+<div class="course-container">
+  <h2 class="course-title">교육과정 조회</h2>
+
+  <div class="search-box">
+    <div class="form-group year-select">
+      <label for="eduYear">교육연도</label>
+      <select id="eduYear" name="eduYear">
+        <option value="">전체</option>
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+      </select>
+    </div>
+
+    <div class="form-group type-select">
+      <label for="eduType">교육구분</label>
+      <select id="eduType" name="eduType">
+        <option value="">전체</option>
+        <option value="집합">집합</option>
+        <option value="사이버">사이버</option>
+      </select>
+    </div>
+
+    <div class="form-group name-input">
+      <label for="courseName">과정명</label>
+      <input type="text" id="courseName" name="courseName" placeholder="과정명을 입력하세요">
+    </div>
+
+    <div class="search-actions">
+      <button type="submit" id="btn-search">조회</button>
+      <button type="reset" id="btn-reset">초기화</button>
+    </div>
+  </div>
+
+  <table class="course-table">
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>교육연도</th>
+        <th>교육명</th>
+        <th>교육구분</th>
+        <th>교육시작일</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr onclick="location.href='/course/detail?id=1'">
+        <td>1</td>
+        <td>2025</td>
+        <td>식품안전 기본교육</td>
+        <td>집합</td>
+        <td>2025-05-01</td>
+      </tr>
+      <tr onclick="location.href='/course/detail?id=2'">
+        <td>2</td>
+        <td>2025</td>
+        <td>의약품 유통관리</td>
+        <td>사이버</td>
+        <td>2025-06-10</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  <div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>
