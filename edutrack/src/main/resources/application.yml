@@ -10,3 +10,6 @@ spring:
     type-aliases-package: com.edutrack.model
     configuration:
       map-underscore-to-camel-case: true
+
+server:
+  port: 8090

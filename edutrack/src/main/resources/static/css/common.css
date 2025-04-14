@@ -1,0 +1,190 @@
+/* common.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #f5f7fa;
+  }
+  
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .header-left img {
+    height: 36px;
+  }
+  
+  .site-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #003366;
+  }
+  
+  .header-utils {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  
+  .icon-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+    color: #333;
+  }
+  
+  .icon-group button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  
+  .icon-group img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .icon-label {
+    margin-top: 4px;
+  }
+  
+  .gnb {
+    background-color: #003366;
+    padding: 12px 0;
+  }
+  
+  .gnb-center {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+  }
+  
+  .gnb-center a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .gnb-center a:hover {
+    text-decoration: underline;
+  }
+  /* 푸터 영역 */
+  footer {
+    background-color: #f4f4f4;
+    font-size: 14px;
+    color: #333;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+  }
+  
+  .footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 40px;
+    flex-wrap: wrap;
+  }
+  
+  .f-left {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .f-logo {
+    margin-bottom: 10px;
+  }
+  
+  .f-logo .logo-im {
+    width: 200px;
+    height: auto;
+  }
+  
+  .f-info {
+    line-height: 1.6;
+  }
+  
+  .f-info .info-addr,
+  .f-info .info-tel {
+    margin: 10px;
+    color: #444;
+  }
+  
+  .f-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-top: 10px;
+  }
+  
+  .f-link {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .f-link a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+  
+  .f-link a:hover {
+    border-color: #003366;
+  }
+  
+  .f-btm {
+    padding: 15px 40px;
+    border-top: 1px solid #ccc;
+    background-color: #e9e9e9;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    text-align: center;
+  }
+  
+  .f-menu {
+    margin-bottom: 5px;
+  }
+  
+  .f-menu a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #003366;
+    float: left;
+  }
+  
+  .f-menu a.point {
+    font-weight: bold;
+  }
+  
+  .f-copy {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 10px;
+    float: right;
+  }
+  
+  .f-btm-ban .ban-txt {
+    font-size: 12px;
+    color: #999;
+  }
+  

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>EduTrack 메인페이지</title>
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --calendar-header-bg: #002f6c; /* 딥네이비 */
+      --calendar-event-bg: #ffa07a; /* 살몬 계열 */
+    }
+
+    #calendar {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1rem;
+      font-family: 'Segoe UI', sans-serif;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    .fc .fc-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .fc .fc-toolbar-title {
+      font-size: 1.2rem;
+      color: var(--calendar-header-bg);
+      text-align: center;
+      flex: 1;
+    }
+
+    .fc .fc-toolbar-chunk:first-child,
+    .fc .fc-toolbar-chunk:last-child {
+      flex: 0 0 auto;
+    }
+
+    .fc .fc-button-group .fc-prev-button,
+    .fc .fc-button-group .fc-next-button {
+      background-color: transparent;
+      border: 2px solid var(--calendar-header-bg);
+      color: var(--calendar-header-bg);
+      font-weight: bold;
+      border-radius: 4px;
+      width: 36px;
+      height: 36px;
+    }
+
+    .fc .fc-button-group .fc-prev-button:hover,
+    .fc .fc-button-group .fc-next-button:hover {
+      background-color: var(--calendar-header-bg);
+      color: #fff;
+    }
+
+    .fc .fc-button-primary,
+    .fc .fc-button-primary:disabled {
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .fc .fc-button-primary:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .fc .fc-button.fc-today-button {
+      display: none;
+    }
+
+    .fc-daygrid-event {
+      background-color: var(--calendar-event-bg);
+      border: none;
+      color: #000;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const calendarEl = document.getElementById('calendar');
+      if (calendarEl) {
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          locale: 'ko',
+          height: 450,
+          headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: ''
+          },
+          events: [
+            {
+              title: '식품안전 교육',
+              start: '2025-04-10'
+            },
+            {
+              title: '의약품 교육',
+              start: '2025-04-18'
+            }
+          ]
+        });
+        calendar.render();
+      }
+    });
+  </script>
+
+</head>
+<body>
+  <div th:replace="fragments/header :: header"></div>
+
+  <main class="main-container">
+    <div class="top-section">
+      <!-- 교육일정 영역 -->
+      <section class="calendar-section">
+        <h2 class="section-title">교육일정</h2>
+        <div class="calendar" id="calendar">달력 컴포넌트 자리</div>
+      </section>
+
+      <!-- 교육목록 영역 -->
+      <section class="education-list-section">
+        <h2 class="section-title">교육목록</h2>
+        <div class="tab-header">
+          <div class="active">이달의 교육</div>
+          <div>추천교육</div>
+        </div>
+        <div class="tab-content">
+          <ul>
+            <li>
+              <span class="title">[온라인] 식품안전 기본 교육</span>
+              <span class="type">온라인</span>
+            </li>
+            <li>
+              <span class="title">[집합] 의약품 유통관리</span>
+              <span class="type">집합</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <div class="bottom-section">
+      <section class="notice-section">
+        <h2 class="section-title">공지사항</h2>
+        <ul>
+          <li>
+            <span class="title">[공지] 시스템 점검 안내</span>
+            <span class="date">2025-04-10</span>
+          </li>
+          <li>
+            <span class="title">교육 신청 방법 변경 안내</span>
+            <span class="date">2025-04-01</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="resources-section">
+        <h2 class="section-title">자료실</h2>
+        <ul>
+          <li>
+            <span class="title">교육자료_안내.pdf</span>
+            <span class="date">2025-03-29</span>
+          </li>
+          <li>
+            <span class="title">시스템 이용매뉴얼.hwp</span>
+            <span class="date">2025-03-20</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

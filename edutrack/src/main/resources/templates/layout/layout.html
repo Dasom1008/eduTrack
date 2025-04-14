@@ -1,0 +1,23 @@
+<!-- /templates/layout.html -->
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:replace="${title}">EduTrack</title>
+  <link rel="stylesheet" href="/css/common-ui.css">
+</head>
+<body>
+
+  <!-- Header Fragment 삽입 -->
+  <div th:replace="fragments/header :: header"></div>
+
+  <!-- 본문 -->
+  <main class="edu-container">
+    <div th:replace="${content}"></div>
+  </main>
+
+  <!-- Footer Fragment 삽입 -->
+  <div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>
